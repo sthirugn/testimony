@@ -3,10 +3,8 @@ Testimony
 
 .. contents:: Topics
 
-.. _what_is_testimony:
-
 What is Testimony?
-``````````````````
+------------------
 
 Testimony is an approach to document test cases in the Python source code using
 the function docstrings.
@@ -20,10 +18,8 @@ right tool for you.
 Don't worry.  Testimony can help you to use your Python automation framework as
 a test case repository tool.
 
-.. _advantages:
-
 Advantages
-``````````
+----------
 
 Using Testimony brings lot of advantages to your project:
 
@@ -36,10 +32,8 @@ Using Testimony brings lot of advantages to your project:
 5. Easily extract test case information using Testimony and port it to any test
    management tool.
 
-.. _testcase_docstring_format:
-
 Test Case Docstring format
-``````````````````````````
+--------------------------
 
 Testimony allows you to easily configure ``Testimony tokens`` which are the
 defined docstring items which will be used in test case parsing.
@@ -56,10 +50,8 @@ defined docstring items which will be used in test case parsing.
   tokens prefixed with ``@`` and suffixed with ``:``.  Otherwise, you may see
   incorrect results.
 
-.. _sample_testcase:
-
 Sample Test Case
-++++++++++++++++
+~~~~~~~~~~~~~~~~
 
 A sample python test case with test case tokens is shown below:
 
@@ -83,14 +75,10 @@ A sample python test case with test case tokens is shown below:
 In the above example, as you may guess - `feature`, `setup`, `steps`, `assert`,
 `bz`, `automated` are all tokens.
 
-.. _how_it_works:
-
 How it works?
-`````````````
+-------------
 
-To understand how Testimony works, let's look at the ``help`` command:
-
-.. code-block:: bash
+To understand how Testimony works, let's look at the ``help`` command::
 
     $ testimony --help
       Usage: testimony [OPTIONS] REPORT [PATH]...
@@ -127,22 +115,18 @@ Testimony does the following to parse the test case docstrings:
       2. class level
       3. module level
 
-.. _installation:
-
 Installation
-````````````
+------------
 
 You can install Testimony from `PyPI <https://pypi.python.org/pypi/testimony>`_
 using pip:
 
-.. code-block:: bash
+.. code-block:: console
 
-    pip install testimony
-
-.. _usage_examples:
+    $ pip install testimony
 
 Usage Examples
-``````````````
+--------------
 
 .. note::
 
@@ -151,23 +135,18 @@ Usage Examples
   different test case format examples.  The sample commands used below also use
   this data.
 
-.. _help_command:
-
 help command
-++++++++++++
+~~~~~~~~~~~~
 
-See how_it_works_ section
-
-
-.. _print_command:
+See `How it works?`_ section
 
 print command
-+++++++++++++
+~~~~~~~~~~~~~
 
 Prints a nice summary of all captured tests with the parsed tokens for each
 test.  Also it prints non-recognized tokens.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ testimony print tests | head -n 27
 
@@ -202,10 +181,8 @@ test.  Also it prints non-recognized tokens.
     The print command above uses the ``head`` command to show just one test
     case. Try without ``head`` command to see the entire output.
 
-.. _summary_command:
-
 summary command
-+++++++++++++++
+~~~~~~~~~~~~~~~
 
 Gives a bird's-eye view of all the test cases in the given path.  The report
 includes information such as:
@@ -214,7 +191,7 @@ includes information such as:
   - number of test cases missing docstring.
   - usage of different tokens across the given project.
 
-.. code-block:: bash
+.. code-block:: console
 
     $ testimony summary tests/
 
@@ -230,11 +207,8 @@ includes information such as:
     Test:                           6 (85.71%)
     Type:                           1 (14.29%)
 
-
-.. _validate_command:
-
 validate command
-++++++++++++++++
+~~~~~~~~~~~~~~~~
 
 Validates all the test cases in the given path.  This helps ensure that all your
 tests have the minimal set of tokens defined.  This command gives the required
@@ -249,7 +223,7 @@ identified tests.
        - a test case is missing minimal set of tokens.
        - a test case has an unexpected token.
 
-.. code-block:: bash
+.. code-block:: console
 
    $ testimony validate tests/
 
@@ -283,25 +257,19 @@ identified tests.
    Test cases missing minimal docstrings: 3 (42.86%)
    Test cases with invalid tags: 1 (14.29%)
 
-.. _misc_options:
-
 Misc Options
-++++++++++++
+~~~~~~~~~~~~
 
 1. ``--json`` - a json output is provided when this option is specified.
 2. ``--no-color`` - a colored output is provided by default when the 
    ``termcolor`` package is installed.  This can be disabled by specifying this
    option.
 
-.. _project_contribution:
-
 Project Contribution
-````````````````````
-
-.. _how_to_contribute:
+--------------------
 
 How to Contribute?
-++++++++++++++++++
+~~~~~~~~~~~~~~~~~~
 
 1. Fork the repository on GitHub and make your changes
 2. Test your changes
@@ -309,41 +277,31 @@ How to Contribute?
 4. Watch for the Travis update on the PR as it runs ``flake8``
 5. The PR will be merged after 2 ACKs
 
-.. _author:
-
 Author
-++++++
+~~~~~~
 
 This software is developed by `Suresh Thirugn <https://github.com/sthirugn/>`_
 
-.. _contributors:
-
 Contributors
-++++++++++++
+~~~~~~~~~~~~
 
 | `Og Maciel <https://github.com/omaciel/>`_
 | `Corey Welton <https://github.com/cswiii/>`_
 | `Elyézer Rezende <https://github.com/elyezer/>`_
 
-.. _appendix:
-
 Appendix
-````````
-
-.. _python_test_modules:
+--------
 
 Python Test Modules
-+++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~
 
 All files which match the following criteria:
 
 - file names start with ``test_``
 - file extension matches ``.py``
 
-.. _python_testcase_functions:
-
 Python Test case functions
-++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Python functions whose names start with ``test_``
 
